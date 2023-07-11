@@ -197,6 +197,21 @@
 				font-size:14px;
 				font-family:'Roboto';
 			}
+
+			.popup a {
+				color:#fff;
+				background:#e50b12;
+				border-radius:50px;
+				padding:10px;
+				text-decoration:none;
+
+			}
+
+			table a {
+				color:#e50b12;
+				text-decoration:none;
+				margin:5px;
+			}
 		   
 		</style>
 	
@@ -237,7 +252,7 @@
 
 		var marker = L.marker([row.Lat, row.Long], {
 			opacity: 1
-		}).bindPopup('<div class="popup"><p><strong>'+row.Riding+'</strong></p><p>Date: '+row["Date of Rally"]+'<br>Meeting spot: '+row["Meeting Spot"]+'</p><img src="https://b3056328.smushcdn.com/3056328/wp-content/uploads/2023/03/frack-free-bc-wordmark-square-300x300.png?lossy=1&strip=0&webp=1" style="width:100px; margin:auto;"></div>');
+		}).bindPopup('<div class="popup"><p><strong>'+row.Riding+'</strong></p><p>Date: '+row["Date of Rally"]+'<br>Meeting spot: '+row["Meeting Spot"]+'</p><p><a href="'+row["More information"]+'"">Learn more</a></p><img src="https://b3056328.smushcdn.com/3056328/wp-content/uploads/2023/03/frack-free-bc-wordmark-square-300x300.png?lossy=1&strip=0&webp=1" style="width:100px; margin:auto;"></div>');
 		
 		map.on('popupopen', function(e) {
     var px = map.project(e.target._popup._latlng); // find the pixel location on the map where the popup anchor is
@@ -335,8 +350,8 @@
 				return d.name;
 			})
 			.html(function (d,i) {
-				if (data[d.order]["URL"] && d.name == "Book tickets") {
-					return "<a target=\"_blank\" href="+data[d.order]["URL"]+">Register</a>";
+				if (d.name == "More information") {
+					return "<a target=\"_blank\" href="+data[d.order]["More information"]+">Learn more</a>";
 				} else if (d.name == "Where") {
 					return "<b>"+d.value+"</b>";
 				} else if (d.name == "Location" && data[d.order]["Location"] && d.value !== "Online") {
