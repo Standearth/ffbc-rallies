@@ -64,7 +64,7 @@
 				background: #f5f4ed; 
 			}
 			th { 
-				background: #e50b12; 
+				background: #000000; 
 				color: #fff !important; 
 				font-weight: bold !important; 
 				cursor: s-resize;
@@ -72,7 +72,7 @@
 				background-position: 3% center;
 			}
 			td, th { 
-				padding: 6px;  
+				padding: 15px;  
 				text-align: left; 
 			}
 			
@@ -150,7 +150,7 @@
 			.toggle .active span {
 				color:#fff;
 				cursor:pointer;
-				background:#e50b12;
+				background:#000000;
 				border-radius:50px;
 				width:100px;
 				margin-left:auto;
@@ -168,7 +168,7 @@
 			}
 
 			.toggle span {
-				color:#e50b12;
+				color:#000000;
 				background:#fff;
 				border-radius:50px;
 				cursor:pointer;
@@ -201,8 +201,8 @@
 			}
 
 			.popup a {
-				color:#fff;
-				background:#e50b12;
+				color:#000;
+				background:#FFC816;
 				border-radius:50px;
 				padding:10px;
 				text-decoration:none;
@@ -210,7 +210,7 @@
 			}
 
 			table a {
-				color:#e50b12;
+				color:#000;
 				text-decoration:none;
 				margin:5px;
 			}
@@ -254,7 +254,7 @@
 
 		var marker = L.marker([row.Lat, row.Long], {
 			opacity: 1
-		}).bindPopup('<div class="popup"><p><strong>'+row.City+'</strong></p><p>Date: '+row.Date+'<br>Meeting spot: '+row.Location+'</p><p><a href="'+row.URL+'"">Learn more</a></p><img src="https://b3056328.smushcdn.com/3056328/wp-content/uploads/2023/03/frack-free-bc-wordmark-square-300x300.png?lossy=1&strip=0&webp=1" style="width:100px; margin:auto;"></div>');
+		}).bindPopup('<div class="popup"><p><strong>'+row.City+'</strong></p><p>Date: '+row.Date+'<br>Meeting spot: '+row.Location+'</p><p><a href="'+row.URL+'"">Learn more</a></p><img src="https://acb0a5d73b67fccd4bbe-c2d8138f0ea10a18dd4c43ec3aa4240a.ssl.cf5.rackcdn.com/10046/ffbcmarker.png?v=1750876331000" style="width:100px; margin:auto;"></div>');
 		
 		map.on('popupopen', function(e) {
     var px = map.project(e.target._popup._latlng); // find the pixel location on the map where the popup anchor is
