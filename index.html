@@ -242,6 +242,14 @@
 		attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 	}).addTo(map);
 
+	var ffbcIcon = L.icon({
+		iconUrl: 'https://acb0a5d73b67fccd4bbe-c2d8138f0ea10a18dd4c43ec3aa4240a.ssl.cf5.rackcdn.com/10046/ffbcmarker.png?v=1750876331000',
+
+		iconSize:     [38, 95], // size of the icon
+		iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
+		popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+	});
+
 	// Read markers data from data.csv
 	$.get('https://docs.google.com/spreadsheets/d/e/2PACX-1vT9pDTxPlB8OiwM5BEofb4htua7XU3ux-3OWdjVY0O6AJRunqB95o0wEtm-sP-tT-27q7C-4PduHhCN/pub?gid=0&single=true&output=csv', function(csvString) {
 
@@ -253,7 +261,7 @@
 		for (var i in data) {
 		var row = data[i];
 
-		var marker = L.marker([row.Lat, row.Long], {
+		var marker = L.marker([row.Lat, row.Long], {icon:ffbcIcon}, {
 			opacity: 1
 		}).bindPopup('<div class="popup"><p><strong>'+row.City+'</strong></p><p>Date: '+row.Date+'<br>Meeting spot: '+row.Location+'</p><p><a href="'+row.URL+'"">Learn more</a></p><img src="https://acb0a5d73b67fccd4bbe-c2d8138f0ea10a18dd4c43ec3aa4240a.ssl.cf5.rackcdn.com/10046/ffbcmarker.png?v=1750876331000" style="width:100px; margin:auto;"></div>');
 		
