@@ -242,7 +242,7 @@
 	}).addTo(map);
 
 	// Read markers data from data.csv
-	$.get('https://docs.google.com/spreadsheets/d/e/2PACX-1vRrL7CkCfjDJwTy3woD6EeZ6L6e_IgKKHNHYl4pEzwcTYSf_vjcRx-3rRz8INdcOVvcDIhT7zKRxh40/pub?gid=1382044104&single=true&output=csv', function(csvString) {
+	$.get('https://docs.google.com/spreadsheets/d/e/2PACX-1vT9pDTxPlB8OiwM5BEofb4htua7XU3ux-3OWdjVY0O6AJRunqB95o0wEtm-sP-tT-27q7C-4PduHhCN/pub?gid=0&single=true&output=csv', function(csvString) {
 
 		// Use PapaParse to convert string to array of objects
 		var data = Papa.parse(csvString, {header: true, dynamicTyping: true}).data;
@@ -254,7 +254,7 @@
 
 		var marker = L.marker([row.Lat, row.Long], {
 			opacity: 1
-		}).bindPopup('<div class="popup"><p><strong>'+row.Riding+'</strong></p><p>Date: '+row["Date of Rally"]+'<br>Meeting spot: '+row["Meeting Spot"]+'</p><p><a href="'+row["More information"]+'"">Learn more</a></p><img src="https://b3056328.smushcdn.com/3056328/wp-content/uploads/2023/03/frack-free-bc-wordmark-square-300x300.png?lossy=1&strip=0&webp=1" style="width:100px; margin:auto;"></div>');
+		}).bindPopup('<div class="popup"><p><strong>'+row.City+'</strong></p><p>Date: '+row.Date+'<br>Meeting spot: '+row.Location+'</p><p><a href="'+row.URL+'"">Learn more</a></p><img src="https://b3056328.smushcdn.com/3056328/wp-content/uploads/2023/03/frack-free-bc-wordmark-square-300x300.png?lossy=1&strip=0&webp=1" style="width:100px; margin:auto;"></div>');
 		
 		map.on('popupopen', function(e) {
     var px = map.project(e.target._popup._latlng); // find the pixel location on the map where the popup anchor is
