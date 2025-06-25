@@ -264,7 +264,7 @@
 
 		var marker = L.marker([row.Lat, row.Long], {icon:ffbcIcon}, {
 			opacity: 1
-		}).bindPopup('<div class="popup"><p><strong>'+row.City+'</strong></p><p>Date: '+row.Date+'<br>Meeting spot: '+row.Location+'</p><p><a href="'+row.URL+'"">Learn more</a></p><img src="https://images.squarespace-cdn.com/content/v1/6610475a0ea51b0bfa32a7b7/84427db5-7591-447e-88b4-339de8e35033/frack-free-bc-wordmark-white-text-transparent-800px.png?format=1500w" style="width:100px; margin:auto;"></div>');
+		}).bindPopup('<div class="popup"><p><strong>'+row.City+'</strong></p><p>Date: '+row.Date+'<br>Meeting spot: '+row.Location+'</p><p><a href="'+row.URL+'"">Learn more</a></p><img src="https://b3056328.smushcdn.com/3056328/wp-content/uploads/2023/03/frack-free-bc-wordmark-square-300x300.png?lossy=1&strip=0&webp=1" style="width:100px; margin:auto;"></div>');
 		
 		map.on('popupopen', function(e) {
     var px = map.project(e.target._popup._latlng); // find the pixel location on the map where the popup anchor is
