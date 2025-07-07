@@ -372,8 +372,10 @@
 				return d.name;
 			})
 			.html(function (d,i) {
-				if (d.name == "URL") {
-					return "<a target=\"_blank\" href="+data[d.order]["URL"]+">Learn more</a>";
+				if (d.name == "URL" && d.value.includes("eventbrite") ) {
+					return "<a target=\"_blank\" href="+data[d.order]["URL"]+">Register here</a>";
+				} else if (d.name == "URL" && d.value.includes("google") ) {
+					return "<a target=\"_blank\" href="+data[d.order]["URL"]+">Sign up for updates</a>";
 				} else if (d.name == "Where") {
 					return "<b>"+d.value+"</b>";
 				} else if (d.name == "Location" && data[d.order]["Location"] && d.value !== "TBD") {
