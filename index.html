@@ -372,7 +372,7 @@
 				return d.name;
 			})
 			.html(function (d,i) {
-				if (d.name == "URL" && d.value.includes("eventbrite") ) {
+				if (d.name == "URL" && d.value.includes("eventbrite") || d.value.includes("bit.ly") ) {
 					return "<a target=\"_blank\" href="+data[d.order]["URL"]+">Register here</a>";
 				} else if (d.name == "URL" && d.value.includes("google") ) {
 					return "<a target=\"_blank\" href="+data[d.order]["URL"]+">Sign up for updates</a>";
